@@ -1,1 +1,1 @@
-# Medical-Imaging-Data-Augmentation-Using-Stable-Diffusion
+#Adapting Pretrained Stable Diffusion models to generate Chest X-ray images
