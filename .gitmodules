@@ -1,3 +1,9 @@
 [submodule "cifar10-pytorch"]
 	path = cifar10-pytorch
 	url = https://github.com/cprimel/cifar10-pytorch
+[submodule "diffusion-models-class"]
+	path = diffusion-models-class
+	url = https://github.com/Alaqian/diffusion-models-class
+[submodule "Rx-thorax-automatic-captioning"]
+	path = Rx-thorax-automatic-captioning
+	url = https://github.com/Alaqian/Rx-thorax-automatic-captioning
