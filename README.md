@@ -23,4 +23,4 @@ git submodule add https://github.com/example-username/example-repo.git
 ```
 This will create a new directory in your repository that contains a clone of the "example-repo" repository.
 
-Commit and push the chnages to the main branch.
+Commit and push the changes to the main branch.
