@@ -14,7 +14,7 @@ Enter the following command to initialize and update all submodules:
 ```bash
 git submodule update --init --recursive
 ```
-### Adding Submodule
+### Adding a Submodule
 To add a submodule to this repository, first create a fork of the original repository.
 
 Then you can use the git submodule add command followed by the URL of the forked repository. 
