@@ -1,0 +1,3 @@
+[submodule "cifar10-pytorch"]
+	path = cifar10-pytorch
+	url = https://github.com/cprimel/cifar10-pytorch
