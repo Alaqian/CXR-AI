@@ -7,6 +7,7 @@ https://console.cloud.google.com/storage/browser?authuser=2&project=distributed-
 
 ## Mounting Bucket to GCE VM:
 [Mount a Cloud Storage bucket using Cloud Storage FUSE](https://cloud.google.com/storage/docs/gcsfuse-quickstart-mount-bucket)
+https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md
 **Note:** Does not work on Colab-vm
 ```bash
 gcsfuse cxray_dataset "$HOME/mount-folder"
