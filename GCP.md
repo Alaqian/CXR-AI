@@ -11,6 +11,7 @@ https://towardsdatascience.com/complete-walkthrough-to-connect-your-sde-to-gcp-w
 
 ## Mounting Bucket to GCE VM:
 [Mount a Cloud Storage bucket using Cloud Storage FUSE](https://cloud.google.com/storage/docs/gcsfuse-quickstart-mount-bucket)
+https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md
 **Note:** Does not work on Colab-vm
 ```bash
 gcsfuse cxray_dataset "$HOME/mount-folder"
