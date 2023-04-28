@@ -5,6 +5,10 @@ https://console.cloud.google.com/compute/instances?authuser=2&project=distribute
 ## Buckets:
 https://console.cloud.google.com/storage/browser?authuser=2&project=distributed-eye-384021&prefix=&forceOnBucketsSortingFiltering=true
 
+## VS Code:
+Follow this guide to SSH into the VM instance and use VS Code:.
+https://towardsdatascience.com/complete-walkthrough-to-connect-your-sde-to-gcp-with-github-bc39eec0db9e
+
 ## Mounting Bucket to GCE VM:
 [Mount a Cloud Storage bucket using Cloud Storage FUSE](https://cloud.google.com/storage/docs/gcsfuse-quickstart-mount-bucket)
 **Note:** Does not work on Colab-vm
@@ -17,5 +21,9 @@ gcloud storage <command> gs://cxray_dataset/<dir name>
 # example 1: listing files in a dir
 gcloud storage ls gs://cxray_dataset/padchest
 # example 2: moving a folder from bucket to local
-gcloud storage cp -r gs://cxray_dataset/padchest/padchest_sample2 padches
+gcloud storage cp -r gs://cxray_dataset/padchest/padchest_sample2 padchest
+```
+**IMPORTANT:** REMEMBER TO UNMOUNT THE BUCKET AFTER USE
+```bash
+fusermount -u "$HOME/mount-folder"
 ```
