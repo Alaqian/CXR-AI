@@ -30,3 +30,14 @@ Components:
 
 ## 2. Textural Inversion
 An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion: https://arxiv.org/abs/2208.01618
+
+Textual Inversion, Personalizing Text-to-Image Generation https://invoke-ai.github.io/InvokeAI/features/TEXTUAL_INVERSION/
+
+How to Fine-tune Stable Diffusion using Textual Inversion How to Fine-tune Stable Diffusion using Textual Inversion https://towardsdatascience.com/how-to-fine-tune-stable-diffusion-using-textual-inversion-b995d7ecc095
+
+ the approach of Gal et al. (2022), the Stable Diffusion model can be fine-tuned to generate
+better looking images for the radiology setting by focusing on the embeddings of the text encoder.
+In this case, during training, the VAE, the U-Net, as well as all the other layers of the text encoder
+are frozen. In addition, a new token gets introduced, that can either describe: patient-level features,
+such as gender, age and body weight; procedure-level features, such as body part and modality;
+abnormality-level features, such as "no findings" or "pleural effusion".
