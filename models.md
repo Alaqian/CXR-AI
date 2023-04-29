@@ -41,3 +41,12 @@ In this case, during training, the VAE, the U-Net, as well as all the other laye
 are frozen. In addition, a new token gets introduced, that can either describe: patient-level features,
 such as gender, age and body weight; procedure-level features, such as body part and modality;
 abnormality-level features, such as "no findings" or "pleural effusion".
+
+As an example, we could introduce the token < lung − xray > that is supposed to describe both a
+body part, lungs, and a modality, X-ray. This learning approach, denoted Textual Inversion, zeroes
+out all the gradients associated with the embeddings of the already existing tokens, and in the end
+only learns the embedding of this newly introduced token.
+
+## 3. DreamBooth
+DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation
+https://arxiv.org/abs/2208.12242
