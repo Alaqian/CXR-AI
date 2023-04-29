@@ -22,7 +22,7 @@ a sample of one million text prompts from the LAION-400M dataset was used for te
 
 this is the dataset guage for the domain of CXR, we leverage the publicly available MIMIC-CXR dataset [15], under institutional review board approval. The full dataset contains 377,110 images and their associated radiology reports, from 227,827 unique studies performed at the Beth Israel Deaconess Medical Center in Boston, MA, USA.
 
-Components:
+Approaches:
 1. LAION-5B pretrained variational autoencoder (VAE)
 2. A frozen CLIP text encoder
 3. Textual inversion
@@ -35,7 +35,7 @@ Textual Inversion, Personalizing Text-to-Image Generation https://invoke-ai.gith
 
 How to Fine-tune Stable Diffusion using Textual Inversion How to Fine-tune Stable Diffusion using Textual Inversion https://towardsdatascience.com/how-to-fine-tune-stable-diffusion-using-textual-inversion-b995d7ecc095
 
- the approach of Gal et al. (2022), the Stable Diffusion model can be fine-tuned to generate
+The Stable Diffusion model can be fine-tuned to generate
 better looking images for the radiology setting by focusing on the embeddings of the text encoder.
 In this case, during training, the VAE, the U-Net, as well as all the other layers of the text encoder
 are frozen. In addition, a new token gets introduced, that can either describe: patient-level features,
@@ -47,6 +47,7 @@ body part, lungs, and a modality, X-ray. This learning approach, denoted Textual
 out all the gradients associated with the embeddings of the already existing tokens, and in the end
 only learns the embedding of this newly introduced token.
 
-## 3. DreamBooth
-DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation
-https://arxiv.org/abs/2208.12242
+## 3. DreamBooth U-Net Fine-tuning
+DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation https://arxiv.org/abs/2208.12242
+
+Improve the baseline Stable Diffusion model to generate better domain-specific images by fine-tuning the U-Net. All components except the U-net are kept frozen. The training is similar to the training of the original Stable Diffusion model, relying on MSE loss at several time steps of the denoising process to progressively converge to better generation of in-domain images.
