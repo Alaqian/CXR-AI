@@ -1,5 +1,5 @@
 # Models and Training Options
-## 1. Stanford
+## 1. Stanford (Original Chest X-ray Model)
 Experiments were conducted on 64 A100 GPUs split across two compute instances. Models were mostly trained (unless otherwise specified) in bf16 precision, as this led to 1/3 reduction of training time. Using bf16 precision, no significant training time difference was noticed across the various experiments, whether they fine-tuned one or several SD components, except when changing the number of training steps itself. At an image resolution of 512x512 px, an A100 GPU fine-tuning SD can hold a batch size of 8 (bf16 precision). Splitting batches across the GPUs of each compute instance, models were trained with a batch size of 256. In this setting, fine-tuning a model for 1k training steps took approximately 20 minutes; for 12.5k training steps, around 5 hours; for 60k training steps, one day.
 
 Model weights for the SD pipeline (version 1.4) were obtained from the repository ”CompVis/stable-diffusionv1-4”(Hugging Face hub [53]), unless otherwise specified.
