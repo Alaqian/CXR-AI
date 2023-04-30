@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ignore all desktop.ini files
+**/desktop.ini
+desktop.ini
+**/*/desktop.ini
