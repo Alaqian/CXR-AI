@@ -28,6 +28,29 @@ this is the dataset guage for the domain of CXR, we leverage the publicly availa
 3. Textual inversion
 4. Fine-tuning the U-Net component
 
+The presented works use
+the few-shot fine-tuned ”DreamBooth” model as a baseline.
+
+### Learning rate, train steps 
+1k training steps improved the
+FID scores on the two baseline approaches, original SD and
+DreamBooth SD, underlining the ability of the SD pipeline
+to quickly learn domain specific content. As the number
+of training steps grew to 12.5k, FID scores slightly deteriorated, which we hypothesize to be due to the model not
+overfitting a few images anymore and diversifying its synthetic generations, but losing in quality for each of these
+generations. Finally, 60k steps provided the best quality of
+results when using the learning rate 5e-5, with an FIDXRV
+of 3.6 and an FIDIncepV3 of 54.9. The results of the same
+model evaluated with CLIP were not coherent: the FID
+score was higher than training with only 1k steps, though
+the domain-specific FIDXRV coupled with a manual review
+strongly suggested an improvement of performance. We believe this shows the limitations of using a CLIP-based metric for this domain-specific task, once models become good
+enough and spotting differences and improvements need a
+more fine-grained evaluation. The gap in performance between 12.5k and 60k steps suggests that more training steps
+could further improve the quality of the synthetic distribution of images. As results were worse for a learning rate
+1e-4, other experiments relied on a learning rate of 5e-5.
+
+
 ### Results:
 1. Out of all the methods, the U-Net fine-tuning seems by far the most promising: it gets the lowest
 FID-scores and obviously the most realistic outputs. further progress in the domain-specific generation of images for radiology require
@@ -71,6 +94,15 @@ DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Genera
 
 Improve the baseline Stable Diffusion model to generate better domain-specific images by fine-tuning the U-Net. All components except the U-net are kept frozen. The training is similar to the training of the original Stable Diffusion model, relying on MSE loss at several time steps of the denoising process to progressively converge to better generation of in-domain images.
 
+In
+order to avoid catastrophic forgetting and/or incrementally
+learn new concepts or styles, the authors suggest the use of
+a prior-preserving loss, where pairs of images and prompts
+belonging to the prior are randomly sampled from the newly
+generated ones at training time to maintain the performance
+of the model on these prior elements.
+
+withthis approach it is still easy to overfit the model and the image generation diversity is low [3].
 ## 4. Another Stable Diffusion Study
 Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems https://arxiv.org/abs/2209.01618
 
