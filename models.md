@@ -22,16 +22,27 @@ a sample of one million text prompts from the LAION-400M dataset was used for te
 
 this is the dataset guage for the domain of CXR, we leverage the publicly available MIMIC-CXR dataset [15], under institutional review board approval. The full dataset contains 377,110 images and their associated radiology reports, from 227,827 unique studies performed at the Beth Israel Deaconess Medical Center in Boston, MA, USA.
 
-Approaches:
+### Approaches:
 1. LAION-5B pretrained variational autoencoder (VAE)
 2. A frozen CLIP text encoder
 3. Textual inversion
 4. Fine-tuning the U-Net component
 
-Out of all the methods, the U-Net fine-tuning seems by far the most promising: it gets the lowest
+### Results:
+1. Out of all the methods, the U-Net fine-tuning seems by far the most promising: it gets the lowest
 FID-scores and obviously the most realistic outputs. further progress in the domain-specific generation of images for radiology require
 the use of more domain-specific metrics, that would be able to capture the ability of the model to
 correctly insert abnormalities that are coherent with the conditioning text prompt.
+
+2. fine-tuning both the U-Net and CLIP (Contrastive Language Image Pre-Training [35]) text encoder yields the the
+highest image fidelity and conceptual correctness.
+
+3. The original CLIP text encoder can be replaced with
+a domain-specific text encoder that leads to improved
+performance. In the setting where the text encoder is kept frozen and only the U-Net is trained.
+
+4. RoentGen can be fine-tuned on a small subset (1.1-
+5.5k) of images and prompts for use as a data augmentation tool for downstream image classification tasks. 
 
 ## 2. Textural Inversion
 An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion: https://arxiv.org/abs/2208.01618
