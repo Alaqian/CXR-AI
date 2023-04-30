@@ -151,5 +151,6 @@ Fine-Tuning and Guidance https://github.com/huggingface/diffusion-models-class/t
 https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/unit2/01_finetuning_and_guidance.ipynb
 
 
-## 9. Stability AI stable-diffusion
+## 9. Stability AI stable-diffusion Version 2
 https://replicate.com/stability-ai/stable-diffusion#readme
+https://github.com/Stability-AI/stablediffusion
