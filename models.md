@@ -153,4 +153,5 @@ https://colab.research.google.com/github/huggingface/diffusion-models-class/blob
 
 ## 9. Stability AI stable-diffusion Version 2
 https://replicate.com/stability-ai/stable-diffusion#readme
+
 https://github.com/Stability-AI/stablediffusion
