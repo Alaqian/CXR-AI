@@ -132,6 +132,14 @@ channels).
 increases the spatial resolution to 256×256 pixels while introducing higher frequencies. 
 - The class-conditional information is incorporated using a trainable lookup table. This is realized by combining the class embeddings with the diffusion process using cross-attention in the bottleneck of the U-Net
 ## 5. LORA Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning
+LoRA: Low-Rank Adaptation of Large Language Models https://arxiv.org/abs/2106.09685
+
+https://github.com/microsoft/LoRA
+
+https://github.com/tatsu-lab/stanford_alpaca
+
+https://github.com/tloen/alpaca-lora
+
 https://github.com/cloneofsimo/lora
 
 https://ngwaifoong92.medium.com/how-to-fine-tune-stable-diffusion-using-lora-85690292c6a8
