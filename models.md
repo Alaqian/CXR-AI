@@ -163,4 +163,5 @@ https://replicate.com/stability-ai/stable-diffusion#readme
 https://github.com/Stability-AI/stablediffusion
 
 ## 10. Medical Diffusion - FirasGit
-https://github.com/FirasGit/medicaldiffusion
+Medical Diffusion: Denoising Diffusion Probabilistic Models for 3D Medical Image Generation
+https://github.com/FirasGit/medicaldiffusion https://arxiv.org/abs/2211.03364
