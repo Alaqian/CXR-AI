@@ -28,6 +28,11 @@ Approaches:
 3. Textual inversion
 4. Fine-tuning the U-Net component
 
+Out of all the methods, the U-Net fine-tuning seems by far the most promising: it gets the lowest
+FID-scores and obviously the most realistic outputs. further progress in the domain-specific generation of images for radiology require
+the use of more domain-specific metrics, that would be able to capture the ability of the model to
+correctly insert abnormalities that are coherent with the conditioning text prompt.
+
 ## 2. Textural Inversion
 An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion: https://arxiv.org/abs/2208.01618
 
@@ -46,6 +51,9 @@ As an example, we could introduce the token < lung − xray > that is supposed t
 body part, lungs, and a modality, X-ray. This learning approach, denoted Textual Inversion, zeroes
 out all the gradients associated with the embeddings of the already existing tokens, and in the end
 only learns the embedding of this newly introduced token.
+
+Did not yield good results in the original paper. A more complex architecture,
+instead of a simple 1-hidden-layer projection, could be worth exploring: if projection-based domain-adaptation turns out to produce interesting examples, this could open the door to quick domain-adaptation for the large amount of pre-trained text encoders that are now available.
 
 ## 3. DreamBooth U-Net Fine-tuning
 DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation https://arxiv.org/abs/2208.12242
