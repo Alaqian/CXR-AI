@@ -96,6 +96,12 @@ instead of a simple 1-hidden-layer projection, could be worth exploring: if proj
 ## 3. DreamBooth U-Net Fine-tuning
 DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation https://arxiv.org/abs/2208.12242
 
+https://colab.research.google.com/github/huggingface/notebooks/blob/main/diffusers_doc/en/pytorch/dreambooth.ipynb
+
+https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+
+https://github.com/PaddlePaddle/PaddleNLP/tree/develop/ppdiffusers/examples/dreambooth
+
 Improve the baseline Stable Diffusion model to generate better domain-specific images by fine-tuning the U-Net. All components except the U-net are kept frozen. The training is similar to the training of the original Stable Diffusion model, relying on MSE loss at several time steps of the denoising process to progressively converge to better generation of in-domain images.
 
 In
@@ -155,3 +161,6 @@ https://colab.research.google.com/github/huggingface/diffusion-models-class/blob
 https://replicate.com/stability-ai/stable-diffusion#readme
 
 https://github.com/Stability-AI/stablediffusion
+
+## 10. Medical Diffusion - FirasGit
+https://github.com/FirasGit/medicaldiffusion
