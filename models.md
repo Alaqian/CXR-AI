@@ -12,6 +12,8 @@ Experiments were conducted on 64 A100 GPUs split across two compute instances. M
 Model weights for the SD pipeline (version 1.4) were obtained from the repository ”CompVis/stable-diffusionv1-4”(Hugging Face hub [53]), unless otherwise specified.
 
 The code implementation was built on both the diffusers library [50] and the ViLMedic library [8]. Two domainspecific text encoders were used: RadBERT [4], downloadable on the HuggingFace repo StanfordAIMI/RadBERT, and SapBERT [20] available at cambridgeltl/SapBERTfrom-PubMedBERT-fulltext. In the experiments that follow, guidance scale 4 and 75 inference steps with a PNDM noise scheduler [21] enabled the generation of synthetic images properly conditioned on the associated prompts.
+
+Evaluation:  They benchmark the efficacy of these efforts using quantitative image quality metrics and qualitative radiologist-driven evaluations that accurately represent the clinical content of conditional text prompts
 ### Dataset
 1. CheXpert Dataset
 2. MIMIC-CXR Dataset
