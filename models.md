@@ -70,3 +70,16 @@ instead of a simple 1-hidden-layer projection, could be worth exploring: if proj
 DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation https://arxiv.org/abs/2208.12242
 
 Improve the baseline Stable Diffusion model to generate better domain-specific images by fine-tuning the U-Net. All components except the U-net are kept frozen. The training is similar to the training of the original Stable Diffusion model, relying on MSE loss at several time steps of the denoising process to progressively converge to better generation of in-domain images.
+
+## 4. Another Stable Diffusion Study
+Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems https://arxiv.org/abs/2209.01618
+
+we apply the LDM proposed in “High-Resolution Image Synthesis with Latent Diffusion Models” https://arxiv.org/abs/2112.10752  leveraging pre-trained autoencoders. 
+- Input images are first embedded into a latent space of size 64×64×3 using the encoder of a vector quantized-variational autoencoder (VQ-VAE) with 32, 64, and 128 channels in each stage.
+- A diffusion model operates
+within that lower space dominated by lower frequencies and
+performs 1000 denoising steps with a U-Net (32, 128, and 256
+channels).
+- In the final step, the decoder of the autoencoder
+increases the spatial resolution to 256×256 pixels while introducing higher frequencies. 
+- The class-conditional information is incorporated using a trainable lookup table. This is realized by combining the class embeddings with the diffusion process using cross-attention in the bottleneck of the U-Net
