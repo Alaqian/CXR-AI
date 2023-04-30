@@ -70,6 +70,8 @@ performance. In the setting where the text encoder is kept frozen and only the U
 ## 2. Textural Inversion
 An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion: https://arxiv.org/abs/2208.01618
 
+https://github.com/rinongal/textual_inversion
+
 Textual Inversion, Personalizing Text-to-Image Generation https://invoke-ai.github.io/InvokeAI/features/TEXTUAL_INVERSION/
 
 How to Fine-tune Stable Diffusion using Textual Inversion How to Fine-tune Stable Diffusion using Textual Inversion https://towardsdatascience.com/how-to-fine-tune-stable-diffusion-using-textual-inversion-b995d7ecc095
@@ -106,7 +108,13 @@ withthis approach it is still easy to overfit the model and the image generation
 ## 4. Another Stable Diffusion Study
 Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems https://arxiv.org/abs/2209.01618
 
-we apply the LDM proposed in “High-Resolution Image Synthesis with Latent Diffusion Models” https://arxiv.org/abs/2112.10752  leveraging pre-trained autoencoders. 
+https://github.com/PaddlePaddle/PaddleNLP/tree/develop/ppdiffusers/examples/dreambooth
+
+https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+
+This is a tutorial to get teach you how to teach a custom face to Stable Diffusion using Google Cloud Platform (GCP). https://github.com/jehna/stable-diffusion-training-tutorial/blob/main/GCP.md
+
+we apply the LDM proposed in “High-Resolution Image Synthesis with Latent Diffusion Models” https://arxiv.org/abs/2112.10752  leveraging pre-trained autoencoders.
 - Input images are first embedded into a latent space of size 64×64×3 using the encoder of a vector quantized-variational autoencoder (VQ-VAE) with 32, 64, and 128 channels in each stage.
 - A diffusion model operates
 within that lower space dominated by lower frequencies and
@@ -115,3 +123,30 @@ channels).
 - In the final step, the decoder of the autoencoder
 increases the spatial resolution to 256×256 pixels while introducing higher frequencies. 
 - The class-conditional information is incorporated using a trainable lookup table. This is realized by combining the class embeddings with the diffusion process using cross-attention in the bottleneck of the U-Net
+## 5. LORA Low-rank Adaptation for Fast Text-to-Image Diffusion Fine-tuning
+https://github.com/cloneofsimo/lora
+
+https://ngwaifoong92.medium.com/how-to-fine-tune-stable-diffusion-using-lora-85690292c6a8
+
+https://external-preview.redd.it/6_kYud4sH7N4cEU6sEUmEIFdGs5v7m_VnBJPgOMEDp0.png?auto=webp&v=enabled&s=3867fd1e8008640d0abdb3b7be65ff97463d0316
+
+## 6. Original Stable Diffusion GitHubs
+https://github.com/CompVis/stable-diffusion
+https://github.com/CompVis/latent-diffusion
+
+## 7. Hugging Face Diffusers Library
+Diffusers is the go-to library for state-of-the-art pretrained diffusion models for generating images, audio, and even 3D structures of molecules. 
+https://github.com/huggingface/diffusers
+
+https://huggingface.co/docs/diffusers/main/en/index
+
+## 8. Hugging Face Diffusion Models Course
+https://github.com/Alaqian/diffusion-models-class
+
+Fine-Tuning and Guidance https://github.com/huggingface/diffusion-models-class/tree/main/unit2
+
+https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/unit2/01_finetuning_and_guidance.ipynb
+
+
+## 9. Stability AI stable-diffusion
+https://replicate.com/stability-ai/stable-diffusion#readme
