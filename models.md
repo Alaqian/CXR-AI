@@ -171,3 +171,7 @@ https://github.com/Stability-AI/stablediffusion
 ## 10. Medical Diffusion - FirasGit
 Medical Diffusion: Denoising Diffusion Probabilistic Models for 3D Medical Image Generation
 https://github.com/FirasGit/medicaldiffusion https://arxiv.org/abs/2211.03364
+
+## 11. WebUI for Stable Diffusion
+https://github.com/AUTOMATIC1111/stable-diffusion-webui
+support LoRA +
