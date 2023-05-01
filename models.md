@@ -116,11 +116,7 @@ of the model on these prior elements.
 
 withthis approach it is still easy to overfit the model and the image generation diversity is low [3].
 ## 4. Another Stable Diffusion Study
-Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems https://arxiv.org/abs/2209.01618
-
-https://github.com/PaddlePaddle/PaddleNLP/tree/develop/ppdiffusers/examples/dreambooth
-
-https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
+Generation of Anonymous Chest Radiographs Using Latent Diffusion Models for Training Thoracic Abnormality Classification Systems https://arxiv.org/abs/2211.01323
 
 This is a tutorial to get teach you how to teach a custom face to Stable Diffusion using Google Cloud Platform (GCP). https://github.com/jehna/stable-diffusion-training-tutorial/blob/main/GCP.md
 
