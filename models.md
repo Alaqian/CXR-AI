@@ -138,6 +138,8 @@ LoRA: Low-Rank Adaptation of Large Language Models https://arxiv.org/abs/2106.09
 
 https://github.com/cloneofsimo/lora
 
+https://github.com/Linaqruf/kohya-trainer
+
 https://ngwaifoong92.medium.com/how-to-fine-tune-stable-diffusion-using-lora-85690292c6a8
 
 https://external-preview.redd.it/6_kYud4sH7N4cEU6sEUmEIFdGs5v7m_VnBJPgOMEDp0.png?auto=webp&v=enabled&s=3867fd1e8008640d0abdb3b7be65ff97463d0316
