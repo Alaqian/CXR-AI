@@ -62,6 +62,8 @@ https://cloud.google.com/billing/docs/how-to/modify-project#change_the_billing_a
 
 https://cloud.google.com/billing/docs/how-to/modify-project#how-to-change-ba
 
+https://cloud.google.com/billing/docs/how-to/modify-project#required-permissions-change
+
 On the project: Project Billing Manager + Project Viewer OR Project Owner
 
 AND
