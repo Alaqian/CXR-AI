@@ -29,3 +29,28 @@ gcloud storage cp -r gs://cxray_dataset/padchest/padchest_sample2 padchest
 ```bash
 fusermount -u "$HOME/mount-folder"
 ```
+## WebUI
+
+### Installation:
+create a new conda env and activate it
+```bash
+conda create --name webui python=3.10.6
+conda activate webui
+```
+1. Install the dependencies:
+```bash
+sudo apt install wget git python3 python3-venv
+```
+2. Navigate to the directory you would like the webui to be installed and execute the following command:
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
+```
+3. Run `webui.sh`.
+4. Check `webui-user.sh` for options.
+
+### Running
+```bash
+conda activate webui
+cd stable-diffusion-webui
+./webui.sh
+```
