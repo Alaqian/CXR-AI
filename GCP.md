@@ -56,3 +56,14 @@ cd stable-diffusion-webui
 ./webui.sh
 ```
 Click the link generated on the terminal
+
+## Transfer Billing Account
+https://cloud.google.com/billing/docs/how-to/modify-project#change_the_billing_account_for_a_project
+
+https://cloud.google.com/billing/docs/how-to/modify-project#how-to-change-ba
+
+On the project: Project Billing Manager + Project Viewer OR Project Owner
+
+AND
+
+On the current and target Cloud Billing account: Billing Account User + Billing Account Viewer OR Billing Account Administrator
