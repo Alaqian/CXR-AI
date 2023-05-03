@@ -47,6 +47,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusio
 ```
 3. Run `webui.sh`.
 4. Check `webui-user.sh` for options.
+5. Click the link generated on the terminal
 
 ### Running
 ```bash
@@ -54,3 +55,4 @@ conda activate webui
 cd stable-diffusion-webui
 ./webui.sh
 ```
+Click the link generated on the terminal
