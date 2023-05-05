@@ -1,0 +1,1 @@
+Chest X-ray, age 28 male, projection AP_horizontal, modality CR, diagnosis alveolar pattern, pleural effusion, loc pleural, loc right, loc middle lobe, loc left, loc retrocardiac, pneumonia, exclude
