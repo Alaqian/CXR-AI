@@ -30,3 +30,43 @@ gcloud storage cp -r gs://cxray_dataset/padchest/padchest_sample2 padchest
 ```bash
 fusermount -u "$HOME/mount-folder"
 ```
+## WebUI
+
+### Installation:
+create a new conda env and activate it
+```bash
+conda create --name webui python=3.10.6
+conda activate webui
+```
+1. Install the dependencies:
+```bash
+sudo apt install wget git python3 python3-venv
+```
+2. Navigate to the directory you would like the webui to be installed and execute the following command:
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
+```
+3. Run `webui.sh`.
+4. Check `webui-user.sh` for options.
+5. Click the link generated on the terminal
+
+### Running
+```bash
+conda activate webui
+cd stable-diffusion-webui
+./webui.sh
+```
+Click the link generated on the terminal
+
+## Transfer Billing Account
+https://cloud.google.com/billing/docs/how-to/modify-project#change_the_billing_account_for_a_project
+
+https://cloud.google.com/billing/docs/how-to/modify-project#how-to-change-ba
+
+https://cloud.google.com/billing/docs/how-to/modify-project#required-permissions-change
+
+On the project: Project Billing Manager + Project Viewer OR Project Owner
+
+AND
+
+On the current and target Cloud Billing account: Billing Account User + Billing Account Viewer OR Billing Account Administrator
