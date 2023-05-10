@@ -15,7 +15,7 @@ https://towardsdatascience.com/complete-walkthrough-to-connect-your-sde-to-gcp-w
 https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/mounting.md
 **Note:** Does not work on Colab-vm
 ```bash
-"$HOME/mount-folder"
+mkdir "$HOME/mount-folder"
 gcsfuse cxray_dataset "$HOME/mount-folder"
 ```
 Accessing Files:
