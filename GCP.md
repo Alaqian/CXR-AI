@@ -30,6 +30,15 @@ gcloud storage cp -r gs://cxray_dataset/padchest/padchest_sample2 padchest
 ```bash
 fusermount -u "$HOME/mount-folder"
 ```
+## Transferring data from GCE VM to Bucket:
+```
+gsutil -m cp -r <src_dir> gs://<bucket_name>/<dest_dir>
+```
+Example:
+```
+gsutil -m cp -r /home/aaz7118_nyu_edu/tests/ gs://cxray_dataset/
+```
+
 ## WebUI
 
 ### Installation:
