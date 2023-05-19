@@ -129,6 +129,7 @@ dmypy.json
 .pyre/
 
 # ignore all desktop.ini files
+.vscode/
 **/desktop.ini
 desktop.ini
 **/*/desktop.ini
