@@ -2,6 +2,8 @@ import os
 import sys
 import pandas as pd
 import argparse
+import cv2
+import numpy as np
 
 LABEL_PATH = "padchest/PADCHEST_chest_x_ray_images_labels_160K_01.02.19.csv"
 
@@ -35,8 +37,19 @@ def parse_args():
         type=int,
         default=None,
         )
+    parser.add_argument(
+        '-p',
+        '--prompt',
+        help='generate prompt text files',
+        action='store_true',
+    )
+    parser.add_argument(
+        '-c',
+        '--convert',
+        help='convert grayscale images to RGB',
+        action='store_true',
+    )
         
-
 def process_prompts(src_dir, dst_dir, labels, ImageDir=None):
     
     labels = pd.read_csv(labels, index_col=0)
@@ -67,13 +80,26 @@ def process_prompts(src_dir, dst_dir, labels, ImageDir=None):
     for image in os.listdir(src_dir):
         if image in labels['ImageID'].values:
             prompt = labels[labels['ImageID'] == image]['Prompt'].values[0]
-            with open(os.join(dst_dir, image.split('.')[0] + '.txt'), 'w') as f:
+            with open(os.join(dst_dir, "data", image.split('.')[0] + '.txt'), 'w') as f:
                 f.write(prompt)
-            
 
 def convert_to_RGB(src_dir, dst_dir):
-    return
-
+    for img_path in os.listdir(src_dir):
+        if img_path.endswith(".png"):
+            img = cv2.imread(os.path.join(src_dir, img_path), cv2.IMREAD_GRAYSCALE)
+            # expand grayscale to RGB
+            img = np.expand_dims(img, axis=2)
+            img = np.repeat(img, 3, axis=2)
+            cv2.imwrite(os.path.join(dst_dir, "data", img_path), img)
+            
 if __name__ == 'main':
-    args - parse_args()
-    process_prompts(src_dir=args.src_dir, dst_dir=args.dst_dir, labels=args.labels, ImageDir=args.img_dir)
+    args = parse_args()
+    if not os.path.exists(args.dst_dir):
+        os.mkdir(args.dst_dir)
+      
+    if args.prompt:
+        process_prompts(src_dir=args.src_dir, dst_dir=args.dst_dir, labels=args.labels, ImageDir=args.img_dir)
+    if args.convert:
+        convert_to_RGB(src_dir=args.src_dir, dst_dir=args.dst_dir)
+        
+    
