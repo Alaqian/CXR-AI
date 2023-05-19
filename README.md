@@ -1,5 +1,9 @@
-# Chest-X-ray-Generator
+# Adapting Pretrained Stabled Diffusion model to generate Chest X-ray data
 
+Final project for ECE-GY 6123
+Members: Alaqian Zafar, Akshay Gowda and Chinmay Tompe
+
+Abstract: We explore two different finetuning techniques to teach the model the concepts of a chest X-ray. We propose adopting a low-rank adaptation (LoRA) method with Dreambooth for fine- tuning large pre-trained language models, reducing the number of trainable parameters, for downstream tasks while maintaining model quality. Our approach can help generate synthetic chest X-rays and improve the availability of healthcare datasets. These images can potentially be used for training machine learning models, data augmentation, and clinical applications.
 ## Instructions
 ### Cloning Repository
 Enter the following command to clone the repository:
