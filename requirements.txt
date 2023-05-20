@@ -22,3 +22,4 @@ dadaptation==1.5
 lion-pytorch==0.0.6
 lycoris-lora==0.1.4
 wandb==0.15.0
+tqdm

@@ -4,6 +4,7 @@ import os
 import cv2
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 LABEL_PATH = "padchest/PADCHEST_chest_x_ray_images_labels_160K_01.02.19.csv"
 
@@ -102,22 +103,37 @@ def process_prompts(src_dir, dst_dir, labels, ImageDir=None):
         os.path.join(dst_dir, "PADCHEST_Prompt.csv"), index=False
     )
 
-    # Save txt files with prompts as the same name as the image file at the destination directory
-    for image in os.listdir(src_dir):
-        if image in labels["ImageID"].values:
-            prompt = labels[labels["ImageID"] == image]["Prompt"].values[0]
-            with open(os.path.join(dst_dir, "data", image.split(".")[0] + ".txt"), "w") as f:
-                f.write(prompt)
+    print("Generating prompt text files:")
+    with tqdm(total=len(os.listdir(src_dir))) as pbar:
+        for image in os.listdir(src_dir):
+            if image in labels["ImageID"].values:
+                prompt = labels[labels["ImageID"] == image]["Prompt"].values[0]
+                with open(
+                    os.path.join(dst_dir, "data", image.split(".")[0] + ".txt"), "w"
+                ) as f:
+                    f.write(prompt)
+            pbar.update(1)
+
+    print("Prompt generation complete!")
 
 
 def convert_to_RGB(src_dir, dst_dir):
-    for img_path in os.listdir(src_dir):
-        if img_path.endswith(".png"):
-            img = cv2.imread(os.path.join(src_dir, img_path), cv2.IMREAD_GRAYSCALE)
-            # expand grayscale to RGB
-            img = np.expand_dims(img, axis=2)
-            img = np.repeat(img, 3, axis=2)
-            cv2.imwrite(os.path.join(dst_dir, "data", img_path), img)
+    print("Converting grayscale images to RGB:")
+    with tqdm(total=len(os.listdir(src_dir))) as pbar:
+        for img_path in os.listdir(src_dir):
+            if img_path.endswith(".png"):
+                img = cv2.imread(
+                    os.path.join(src_dir, img_path), cv2.IMREAD_GRAYSCALE
+                )
+                # expand grayscale to RGB
+                img = np.expand_dims(img, axis=2)
+                img = np.repeat(img, 3, axis=2)
+                cv2.imwrite(
+                    os.path.join(dst_dir, "data", img_path), img
+                )
+            pbar.update(1)
+
+    print("Image conversion complete!")
 
 
 if __name__ == "__main__":
