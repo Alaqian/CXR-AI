@@ -2,11 +2,10 @@ import argparse
 import json
 import os
 
-from tqdm import tqdm
 from huggingface_hub import hf_hub_download
 
 PRETRAINED_MODELS = json.load(open("pretrained_models/pretrained_models.json"))
-# VAE = json.load(open("vae/vae.json"))
+VAE = json.load(open("vae/vae.json"))
 
 
 def parse_args():
@@ -20,6 +19,14 @@ def parse_args():
         help="Model to download",
     )
     parser.add_argument(
+        "--vae",
+        "-v",
+        type=str,
+        required=False,
+        choices=list(VAE.keys()),
+        help="VAE to download",
+    )
+    parser.add_argument(
         "--force_download",
         "-f",
         action="store_true",
@@ -28,13 +35,13 @@ def parse_args():
     return parser.parse_args()
 
 
-def download_model(model, force=False):
+def download_model(model, force=False, download_dir="pretrained_models"):
     filename = model["filename"]
     repo_id = model["repo_id"]
-    if os.path.exists(f"pretrained_models/{filename}"):
-        print(f"{repo_id} model already exists at pretrained_models/{filename}")
+    if os.path.exists(f"{download_dir}/{filename}"):
+        print(f"{repo_id} model already exists at {download_dir}/{filename}")
         if force:
-            print(f"Overwriting {repo_id} model at pretrained_models/{filename}")
+            print(f"Overwriting {repo_id} model at {download_dir}/{filename}")
         else:
             return
     print(f"Downloading {repo_id}/{filename}")
@@ -43,8 +50,14 @@ def download_model(model, force=False):
 
 
 if __name__ == "__main__":
-    model_id = parse_args().model
     force = parse_args().force_download
+    
+    model_id = parse_args().model
     if model_id:
         model_info = PRETRAINED_MODELS[model_id]
         download_model(model_info, force)
+    
+    vae_id = parse_args().vae
+    if vae_id:
+        vae_info = VAE[vae_id]
+        download_model(vae_info, force, download_dir="vae")
