@@ -50,6 +50,7 @@ def parse_args():
         help="convert grayscale images to RGB",
         action="store_true",
     )
+    return parser.parse_args()
 
 
 def process_prompts(src_dir, dst_dir, labels, ImageDir=None):
@@ -98,14 +99,14 @@ def process_prompts(src_dir, dst_dir, labels, ImageDir=None):
     )
     # Save a csv file with 3 columns, ImageID, ImageDir, and Prompt
     labels[["ImageID", "ImageDir", "Prompt"]].to_csv(
-        os.join(dst_dir, "PADCHEST_Prompt.csv"), index=False
+        os.path.join(dst_dir, "PADCHEST_Prompt.csv"), index=False
     )
 
     # Save txt files with prompts as the same name as the image file at the destination directory
     for image in os.listdir(src_dir):
         if image in labels["ImageID"].values:
             prompt = labels[labels["ImageID"] == image]["Prompt"].values[0]
-            with open(os.join(dst_dir, "data", image.split(".")[0] + ".txt"), "w") as f:
+            with open(os.path.join(dst_dir, "data", image.split(".")[0] + ".txt"), "w") as f:
                 f.write(prompt)
 
 
@@ -119,7 +120,7 @@ def convert_to_RGB(src_dir, dst_dir):
             cv2.imwrite(os.path.join(dst_dir, "data", img_path), img)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     args = parse_args()
     if not os.path.exists(args.dst_dir):
         os.mkdir(args.dst_dir)
