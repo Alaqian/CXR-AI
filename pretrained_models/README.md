@@ -1,3 +1,3 @@
 ## Pretrained Models
 
-You can store your pretrained models here.
+This directory is used to download and store pretrained models.
