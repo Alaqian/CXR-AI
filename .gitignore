@@ -130,6 +130,5 @@ dmypy.json
 
 # ignore all desktop.ini files
 .vscode/
-**/desktop.ini
 desktop.ini
-**/*/desktop.ini
+*.safetensors
