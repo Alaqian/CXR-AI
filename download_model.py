@@ -32,14 +32,14 @@ def download_model(model, force=False):
     filename = model["filename"]
     repo_id = model["repo_id"]
     if os.path.exists(f"pretrained_models/{filename}"):
-        print(f"{repo_id}/{filename} already exists at pretrained_models/{filename}")
+        print(f"{repo_id} model already exists at pretrained_models/{filename}")
         if force:
-            print(f"Overwriting {repo_id}/{filename} at pretrained_models/{filename}")
+            print(f"Overwriting {repo_id} model at pretrained_models/{filename}")
         else:
             return
     print(f"Downloading {repo_id}/{filename}")
-    hf_hub_download(repo_id=repo_id, filename=filename, local_dir="pretrained_models")
-    print("Download complete!")
+    hf_hub_download(repo_id=repo_id, filename=filename, local_dir=f"pretrained_models",local_dir_use_symlinks=False)
+    print(f"Downloaded {repo_id} at pretrained_models/{filename}")
 
 
 if __name__ == "__main__":
