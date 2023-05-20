@@ -6,7 +6,7 @@ Members: Alaqian Zafar, Akshay Gowda and Chinmay Tompe
 Abstract: We explore two different finetuning techniques to teach the model the concepts of a chest X-ray. We propose adopting a low-rank adaptation (LoRA) method with Dreambooth for fine- tuning large pre-trained language models, reducing the number of trainable parameters, for downstream tasks while maintaining model quality. Our approach can help generate synthetic chest X-rays and improve the availability of healthcare datasets. These images can potentially be used for training machine learning models, data augmentation, and clinical applications.
 ## Instructions
 ### Cloning Repository
-Enter the following command to clone the repository:
+Clone this repository using the following command:
 ```bash
 git clone https://github.com/Alaqian/Chest-X-ray-Generator
 ```
@@ -17,6 +17,14 @@ cd Chest-X-ray-Generator
 Enter the following command to initialize and update all submodules:
 ```bash
 git submodule update --init --recursive
+```
+### Installing Dependencies
+Run the following command to install all dependencies:
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+python.exe -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 ### Adding a Submodule
 To add a submodule to this repository, first create a fork of the original repository.
