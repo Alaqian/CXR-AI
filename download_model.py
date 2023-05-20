@@ -45,18 +45,24 @@ def download_model(model, force=False, download_dir="pretrained_models"):
         else:
             return
     print(f"Downloading {repo_id}/{filename}")
-    hf_hub_download(repo_id=repo_id, filename=filename, local_dir=f"pretrained_models",local_dir_use_symlinks=False)
-    print(f"Downloaded {repo_id} at pretrained_models/{filename}")
+    hf_hub_download(
+        repo_id=repo_id,
+        filename=filename,
+        cache_dir=".cache",
+        local_dir=download_dir,
+        local_dir_use_symlinks=True
+    )
+    print(f"Downloaded {repo_id} at {download_dir}/{filename}")
 
 
 if __name__ == "__main__":
     force = parse_args().force_download
-    
+
     model_id = parse_args().model
     if model_id:
         model_info = PRETRAINED_MODELS[model_id]
         download_model(model_info, force)
-    
+
     vae_id = parse_args().vae
     if vae_id:
         vae_info = VAE[vae_id]
