@@ -26,6 +26,12 @@ python -m venv .venv
 python.exe -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
+### Running the Code
+#### Full fine-tuning
+coming soon...
+#### Low-rank adaptation (LoRA)
+coming soon...
+
 ### Adding a Submodule
 To add a submodule to this repository, first create a fork of the original repository.
 
