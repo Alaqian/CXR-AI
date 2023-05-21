@@ -44,13 +44,14 @@ def download_model(model, force=False, download_dir="pretrained_models"):
             print(f"Overwriting {repo_id} model at {download_dir}/{filename}")
         else:
             return
-    print(f"Downloading {repo_id}/{filename}")
+    else:
+        print(f"Downloading {repo_id}/{filename}")
     hf_hub_download(
         repo_id=repo_id,
         filename=filename,
         cache_dir=".cache",
         local_dir=download_dir,
-        local_dir_use_symlinks=True
+        local_dir_use_symlinks=True,
     )
     print(f"Downloaded {repo_id} at {download_dir}/{filename}")
 
