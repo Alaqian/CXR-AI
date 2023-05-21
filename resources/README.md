@@ -1,6 +1,6 @@
 ## Resources
 
-This directory contains several resources to learn about Stable Diffusion and other aspects related to the project that were found online or created during the development of the project.
+This contains several resources to learn about Stable Diffusion and other aspects related to the project that were found online or created during the development of the project.
 
 - [models.md](models.md) - A rough summary of  research during the project and other links to resources.
 - [GCP.md](GCP.md) - Guides and resources for using Google Cloud Platform.
@@ -8,6 +8,7 @@ This directory contains several resources to learn about Stable Diffusion and ot
 - [Hugging Face guide on finetuning using LoRA](https://huggingface.co/docs/diffusers/training/lora) - Learn about using LoRA to finetune your model.
 - [Hugging Face guide on finetuning using DreamBooth](https://huggingface.co/docs/diffusers/main/en/training/dreambooth) - This guide will show you how to finetune DreamBooth with the CompVis/stable-diffusion-v1-4 model for various GPU sizes
 - [Hugging Face guide on finetuning using DreamBooth and LoRA](https://huggingface.co/docs/diffusers/main/en/training/lora) -  finetune stable-diffusion-v1-5 on the Pokémon BLIP captions dataset to generate your own Pokémon.
+- [Hugging Face Diffusion Models Course](https://github.com/Alaqian/diffusion-models-class) - 👩‍🎓 Study the theory behind diffusion models, 🧨 Learn how to generate images and audio with the popular 🤗 Diffusers library, 🏋️‍♂️ Train your own diffusion models from scratch, 📻 Fine-tune existing diffusion models on new datasets, 🗺 Explore conditional generation and guidance, 🧑‍🔬 Create your own custom diffusion model pipelines
 - [Hugging Face guide on training using TI](https://huggingface.co/docs/diffusers/main/en/training/text_inversion)
 - [Hugging Face Documentation](https://huggingface.co/docs) - Hugging Face's documentation; excellent resource for various concepts and tutorials. 
 - [Hugging Face Diffusers Documentation](https://huggingface.co/docs/diffusers/main/en/index) - All about diffusion models and tutorials.
