@@ -1,6 +1,6 @@
 ## Resources
 
-This directory contains several resources to learn about Stable Diffusion and other aspects related to the project that were found online or created during the development of the project.
+This contains several resources to learn about Stable Diffusion and other aspects related to the project that were found online or created during the development of the project.
 
 - [models.md](models.md) - A rough summary of  research during the project and other links to resources.
 - [GCP.md](GCP.md) - Guides and resources for using Google Cloud Platform.
