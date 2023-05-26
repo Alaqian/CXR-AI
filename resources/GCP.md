@@ -38,7 +38,8 @@ Example:
 ```
 gsutil -m cp -r /home/aaz7118_nyu_edu/tests/ gs://cxray_dataset/
 ```
-
+## Transferring data between Google Drive and Google Cloud Storage using Google Colab
+https://philipplies.medium.com/transferring-data-from-google-drive-to-google-cloud-storage-using-google-colab-96e088a8c041
 ## WebUI
 
 ### Installation:
