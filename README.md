@@ -1,4 +1,4 @@
-# Adapting Pretrained Stabled Diffusion model to generate Chest X-ray data
+# Adapting Pretrained Stabled Diffusion model to generate Chest X-ray Data
 
 Final project for ECE-GY 6123
 Members: Alaqian Zafar, Akshay Gowda and Chinmay Tompe
